@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated text fill with SVG mask and SVG clippath</title>
+    <link rel="icon" type="image/ico" href="images/indialogo.jpg" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flagstyle.css">
+ 
+</head>
+
+<body>
+
+    <div class="flag">
+        <div class="saffron flag-item"></div>
+        <div class="white flag-item">
+            <div class="circle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span
+                    class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span
+                    class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span
+                    class="bar"></span>
+            </div>
+        </div>
+        <div class="green flag-item"></div>
+        <div class="flag-wave"></div>
+    </div>
+
+    <svg viewBox="0 0 600 300">
+
+        <symbol id="s-text">
+            <text class="text--line" text-anchor="middle" x="50%" y="50%" dy=".35em">Happy Independence Day 2019</text>
+        </symbol>
+
+        <clippath id="cp-text">
+            <text class="text--line" text-anchor="middle" x="50%" y="50%" dy=".35em">Happy Independence Day 2019</text>
+        </clippath>
+
+        <g class="shadow" clip-path="url(#cp-text)">
+            <rect class="anim-shape anim-shape--shadow" width="100%" height="100%"></rect>
+        </g>
+
+        <g class="colortext" clip-path="url(#cp-text)">
+            <rect class="anim-shape" width="100%" height="100%"></rect>
+            <rect class="anim-shape" width="60%" height="100%"></rect>
+
+            <rect class="anim-shape" width="40%" height="100%"></rect>
+        </g>
+
+        <use class="text--transparent" xlink:href="#s-text"></use>
+
+        
+    </svg>
+
+
+
+
+</body>
+
+</html>
+
+
+<!-- ============================= -->
